@@ -78,8 +78,8 @@ jobs:
         # 3. Docker 이미지 빌드
       - name: docker image build
         run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/test .
-      - name: radis image build
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/radis .
+#      - name: radis image build
+#        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/radis .
 
       # 4. DockerHub 로그인
       - name: docker login
@@ -91,8 +91,8 @@ jobs:
       # 5. Docker Hub 이미지 푸시
       - name: docker Hub push
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/test
-      - name: radis Hub push
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/radis
+#      - name: radis Hub push
+#        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/radis
 
 #  # 위 과정에서 푸시한 이미지를 ec2에서 풀받아서 실행시키는 과정
 #  run-docker-image-on-ec2:
